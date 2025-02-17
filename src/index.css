@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Space Grotesk", sans-serif;
+  background-color: #0a0a0a;
+  color: #f3f4f6;
+}
+
+@layer utilities {
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
+  }
+  .animate-blink {
+    animation: blink 0.8s step-end infinite;
+  }
+
+  @keyframes loading {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(250%);
+    }
+  }
+  .animate-loading-bar {
+    animation: loading 0.8s ease infinite;
+  }
+}
+
+.balloon {
+  position: absolute;
+  bottom: -100px;
+  background: radial-gradient(circle, rgb(11, 84, 180), rgb(20, 220, 255));
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: floatUp 10s infinite linear;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-50vh) scale(1.1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.balloon1 {
+  position: absolute;
+  bottom: -100px;
+  background: radial-gradient(circle, rgb(11, 84, 180), rgb(20, 220, 255));
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: floatUp 10s infinite linear;
+}
+
+.balloon2 {
+  position: absolute;
+  bottom: 100px;
+  background: radial-gradient(circle, rgb(11, 84, 180), rgb(20, 220, 255));
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: floatUp 10s infinite linear;
+}
